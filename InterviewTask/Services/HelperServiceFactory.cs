@@ -182,7 +182,9 @@ namespace InterviewTask.Services
             //Additional task
             //Simulate a lack of response from the server: 10% of the time, set weekday opening hours to null
             // Handle this bug in your view - a simple error message (We're sorry, we are temporarily unable to display etc etc ) in the view cards is fine
-            if (rnd.Next(1, 10) > 9)
+            
+            /* Ben O: Upper bound of rnd.Next is exclusive, so increased this to 11 (so max result is 10) so it would work */
+            if (rnd.Next(1, 11) > 9)
             {
                 openingHours[elementToDayNull].MondayOpeningHours = null;
                 openingHours[elementToDayNull].TuesdayOpeningHours = null;
